@@ -12,17 +12,37 @@ for (i = 0; i < 256; i++) {
     grid.appendChild(item.cloneNode(true))
 };
 
-const items = document.querySelectorAll(".item");
+resizeBtn.addEventListener("click", resize);
+clearBtn.addEventListener("click", clear);
+window.addEventListener("keypress", keyStrokes);
 
-items.forEach((item) => {
-    item.addEventListener("mouseover", () => {
-        item.classList.toggle("activated")
+draw();
+
+function draw() {
+    let items = document.querySelectorAll(".item");
+    items.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            let mode = document.querySelector("#mode");
+            let selectedMode = mode.options[mode.selectedIndex].value;
+            if (item.style.backgroundColor != "") {
+                item.style.backgroundColor = ""
+                return;
+            } else if (selectedMode == "black") {
+                item.style.backgroundColor = `rgb(0, 0, 0)`
+            } else if (selectedMode == "crazy") {
+                num1 = Math.floor(Math.random() * 256);
+                num2 = Math.floor(Math.random() * 256);
+                num3 = Math.floor(Math.random() * 256);
+                item.style.backgroundColor = `rgb(${num1}, ${num2}, ${num3})`
+            } else if (selectedMode == "grayscale") {
+                let grayscaleCount = document.querySelectorAll(".grayscale").length;
+                let percentage = Math.max(100 - grayscaleCount * 10, 0);
+                item.classList.add("grayscale")
+                item.style.backgroundColor = `hsl(0, 0%, ${percentage}%)`
+            } else (alert("ERROR"))
+        });
     });
-});
-
-resizeBtn.addEventListener("click",resize);
-clearBtn.addEventListener("click",clear);
-window.addEventListener("keypress",keyStrokes);
+}
 
 function resize() {
     let size = window.prompt("Please enter the new grid size. Your input must be a number.");
@@ -40,26 +60,22 @@ function resize() {
         for (i = 0; i < numCells; i++) {
             grid.appendChild(item.cloneNode(true))
         };
-        let newItems = document.querySelectorAll(".item");
-        newItems.forEach((item) => {
-            item.addEventListener("mouseover", () => {
-                item.classList.toggle("activated")
-            });
-        });
+        draw();
     }
 }
 
 function clear() {
     const items = document.querySelectorAll(".item");
     items.forEach((item) => {
-        item.classList.remove("activated")
+        item.style.backgroundColor = ""
+        item.classList.remove("grayscale")
     })
 };
 
 function keyStrokes(e) {
-    if(e.key == "c" || e.key == "C"){
+    if (e.key == "c" || e.key == "C") {
         clear()
-    } else if(e.key == "r" || e.key == "R"){
+    } else if (e.key == "r" || e.key == "R") {
         resize()
     } else {
         return;

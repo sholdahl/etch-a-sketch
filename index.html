@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>etch-a-sketch</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 </head>
-<body> 
+
+<body>
     <div class="my-container">
         <h1 class="title">Etch-A-Sketch</h1>
         <div class="menu">
             <button id="resize-btn" class="my-btn btn btn-warning">Resize (r)</button>
             <button id="clear-btn" class="my-btn btn btn-warning">Clear (c)</button>
-        </div>
         
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text bg-warning text-dark" id="mode-label" for="mode">Color</label>
+                </div>
+                <select class="custom-select" id="mode">
+                  <option selected value="black">Black</option>
+                  <option value="crazy">Crazy</option>
+                  <option value="grayscale">Grayscale</option>
+                </select>
+              </div>
+            <!-- <select name="mode" id="mode" class="btn my-btn btn-warning">
+                <option value="black">Color: Black</option>
+                <option value="saab">Color: Crazy</option>
+                <option value="opel">Color: Grayscale</option>
+            </select> -->
+        </div>
+
     </div>
-    
+
     <script src="main.js"></script>
 </body>
+
 </html>

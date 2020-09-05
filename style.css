@@ -39,8 +39,8 @@
 }
 
 .my-btn{
-    height: 50%;
-    width: 40%;
+    height: 3em;
+    width: 25%;
     margin: 10px auto;
     display: inline-block;
     font-weight: 600;
@@ -59,4 +59,37 @@ body{
 .title{
     text-align: center;
     letter-spacing: 0.1em;
+}
+
+#mode {
+    width: 35%;
+}
+
+select:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: lightgray !important;
+}
+
+.input-group{
+    width: 40%;
+    margin: 0 !important;
+}
+
+select#mode{
+    border-top-right-radius: 10em;
+    border-bottom-right-radius: 10em;
+    height: 3em;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: 600;
+}
+
+#mode-label{
+    border-top-left-radius: 10em;
+    border-bottom-left-radius: 10em;
+    height: 3em;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: 600;
 }
