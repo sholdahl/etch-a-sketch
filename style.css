@@ -1,0 +1,23 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+}
+
+.container{
+    width: 100%;
+}
+
+html, body, .container, .grid{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+}
