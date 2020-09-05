@@ -8,12 +8,12 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 80%;
+    width: 50%;
     margin: auto;
 }
 .grid{
-    width: 60%;
-    height: 85%;
+    width: 50%;
+    height: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -40,7 +40,7 @@
 
 .my-btn{
     height: 50%;
-    width: 25%;
+    width: 40%;
     margin: 10px auto;
     display: inline-block;
     font-weight: 600;
