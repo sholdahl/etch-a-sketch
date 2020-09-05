@@ -8,12 +8,12 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 50%;
+    width: 650px;
     margin: auto;
 }
 .grid{
-    width: 50%;
-    height: 80%;
+    width: 650px;
+    height: 650px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -83,6 +83,7 @@ select#mode{
     margin: 10px auto;
     font-size: large;
     font-weight: 600;
+    color: #212529;
 }
 
 #mode-label{
@@ -92,4 +93,5 @@ select#mode{
     margin: 10px auto;
     font-size: large;
     font-weight: 600;
+    color: #212529;
 }
