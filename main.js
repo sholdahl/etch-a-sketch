@@ -26,6 +26,7 @@ function draw() {
             let selectedMode = mode.options[mode.selectedIndex].value;
             if (item.style.backgroundColor != "") {
                 item.style.backgroundColor = ""
+                item.classList.remove("grayscale")
                 return;
             } else if (selectedMode == "black") {
                 item.style.backgroundColor = `rgb(0, 0, 0)`
@@ -47,8 +48,10 @@ function draw() {
 function resize() {
     let size = window.prompt("Please enter the new grid size. Your input must be a number.");
     if (isNaN(size)) {
-        alert("you must input a number to resize the ethch-a-sketch!")
+        alert("You must input a number to resize the ethch-a-sketch!")
         return;
+    } else if(size > 200){
+        alert("Pick a smaller number.")
     } else {
         let oldItems = document.querySelectorAll(".item");
         oldItems.forEach((item) => {
